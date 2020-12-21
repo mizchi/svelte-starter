@@ -8,12 +8,19 @@ import analyze from "rollup-plugin-analyzer";
 export default {
   plugins: [
     svelte({
-      preprocess: sveltePreprocess(),
+      preprocess: sveltePreprocess({
+        postcss: {
+          plugins: [
+            require("autoprefixer")({
+              grid: "autoplace",
+            }),
+          ],
+        },
+      }),
       emitCss: false,
     }),
     ts({
       transpiler: "babel",
-      browserslist: ["last 2 version", "> 1%"],
       babelConfig: {
         presets: [
           "@babel/typescript",

@@ -1,11 +1,7 @@
-<script lang="ts">
-  const themeColor = "blue";
-</script>
-
 <style>
-  .text {
-    color: var(--theme-color);
+  .grid {
+    display: flex;
   }
 </style>
 
-<div style="--theme-color: {themeColor}"><span class="text">text</span></div>
+<div class="grid">grid</div>
